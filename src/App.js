@@ -6,6 +6,7 @@ function App() {
     <div className="App">
       <h1>Hello Chain</h1>
       <h2>Making some magic to happen!</h2>
+      <h3>Last test before starting the development.</h3>
     </div>
   );
 }
