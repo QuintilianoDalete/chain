@@ -1,15 +1,17 @@
 import { AuthTypes } from './types';
+import initialState from '../initialState';
 
-export const signIn = (user) => ({
-  type: AuthTypes.SIGNIN,
-  payload: user
-});
+const INITIAL_STATE = initialState.auth;
 
-export const signUp = (user) => ({
-  type: AuthTypes.SIGNUP,
-  payload: user
-});
+const authReducer = (state = INITIAL_STATE, action) => {
+  switch (action.type) {
+    case AuthTypes.SIGNUP:
+      return { ...state, usersList: [...state.usersList, action.payload] };
+    case AuthTypes.LOGOUT:
+      return { ...state, isLogged: false, currentUser: {} };
+    default:
+      return state;
+  }
+};
 
-export const logOut = () => ({
-  type: AuthTypes.LOGOUT
-});
+export default authReducer;
