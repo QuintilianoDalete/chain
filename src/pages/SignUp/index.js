@@ -8,7 +8,11 @@ class SignUp extends Component {
     email: "",
     name: "",
     password: ""
-  }
+  };
+
+  handleInputChange = ({ target: { name, value } }) => {
+    this.setState({ [name]: value });
+  };
 
   render () {
     console.log('props', this.props.history);
