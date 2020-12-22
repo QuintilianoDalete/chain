@@ -1,15 +1,13 @@
 import React from 'react';
+import { Switch, Route } from 'react-router-dom'
+import { Login } from './pages'
 import 'semantic-ui-css/semantic.min.css';
 
-function App() {
-  return (
-    <div className="App">
-      <h1>Hello Chain</h1>
-      <h2>Making some magic to happen!</h2>
-      <h3>Last test before starting the development.</h3>
-    </div>
-  );
-}
+const App = () => (
+  <Switch>
+    <Route path='/' component={Login} /> 
+  </Switch>
+);
 
 
 export default App;
