@@ -1,5 +1,6 @@
 import React from 'react';
 import { Grid } from 'semantic-ui-react'
+import { Link } from 'react-router-dom'
 import { CustomMessage, CustomHeader, SignUpForm } from '../../components';
 
 const SignUp = () => (
@@ -8,7 +9,7 @@ const SignUp = () => (
       <CustomHeader message="Log-in to your account" />
       <SignUpForm />
       <CustomMessage>
-        Already have an acount? <a href='#'>Sign In</a>
+        Already have an acount? <Link to='/'>Sign In</Link>
       </CustomMessage>
     </Grid.Column>
   </Grid>
