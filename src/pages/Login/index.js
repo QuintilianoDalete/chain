@@ -6,6 +6,7 @@ const Login = () => (
   <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
     <Grid.Column style={{ maxWidth: 450 }}>
       <CustomHeader message="Log-in to your account" />
+      <LoginForm />
       <CustomMessage>
         New to us? <a href='#'>Sign Up</a>
       </CustomMessage>
