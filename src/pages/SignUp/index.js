@@ -4,6 +4,12 @@ import { Link } from 'react-router-dom'
 import { CustomMessage, CustomHeader, SignUpForm } from '../../components';
 
 class SignUp extends Component {
+  state = {
+    email: "",
+    name: "",
+    password: ""
+  }
+
   render () {
     console.log('props', this.props.history);
     return (
