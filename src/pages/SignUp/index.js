@@ -17,15 +17,27 @@ class SignUp extends Component {
   render () {
     console.log('props', this.props.history);
     return (
-      <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <CustomHeader message="Log-in to your account" />
-        <SignUpForm />
-        <CustomMessage>
-          Already have an acount? <Link to='/'>Sign In</Link>
-        </CustomMessage>
-      </Grid.Column>
-    </Grid>
+      <Grid 
+        textAlign='center'
+        style={{ height: '100vh' }}
+        verticalAlign='middle'
+      >
+        <Grid.Column style={{ maxWidth: 450 }}>
+          <CustomHeader
+            as="h2"
+            color="blue"
+            textAlign="center"
+            message="Welcome the Chain"
+          />
+          <SignUpForm
+            formData={this.sate}
+            onInputchange={this.handleInputChange}
+          />
+          <CustomMessage>
+            Already have an acount? <Link to='/'>Sign In</Link>
+          </CustomMessage>
+        </Grid.Column>
+      </Grid>
     );
   }
 }
