@@ -5,7 +5,7 @@ import 'semantic-ui-css/semantic.min.css';
 
 const App = () => (
   <Switch>
-    <Route exact path='/' component={Login} /> 
+    <Route exact path='/chain' component={Login} /> 
     <Route path='/signup' component={SignUp} /> 
   </Switch>
 );

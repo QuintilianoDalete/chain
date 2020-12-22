@@ -1,14 +1,13 @@
-import React from 'react';
-import { Button, Form, Segment } from 'semantic-ui-react'
+import React from "react";
+import { Button, Form, Segment } from "semantic-ui-react";
 import PropTypes from "prop-types";
 
-const SignUpForm = ({
+const SiginUpForm = ({
   formData: { name, password, email },
   onInputChange,
   onHandleSubmit
 }) => (
-  
-  <Form size='large'>
+  <Form size="large">
     <Segment stacked>
       <Form.Input
         value={name}
@@ -20,26 +19,26 @@ const SignUpForm = ({
       <Form.Input
         value={email}
         name="email"
-        fluid 
-        placeholder='E-mail address'
+        fluid
+        placeholder="E-mail address"
         onChange={(event) => onInputChange(event)}
       />
       <Form.Input
         value={password}
         name="password"
         fluid
-        placeholder='Password'
-        type='password'
+        placeholder="Password"
+        type="password"
         onChange={(event) => onInputChange(event)}
       />
-      <Button onChange={onHandleSubmit} color='blue' fluid size='large'>
-        Register
+      <Button onClick={onHandleSubmit} color="blue" fluid size="large">
+        SignUp
       </Button>
     </Segment>
   </Form>
 );
 
-SignUpForm.propTypes = {
+SiginUpForm.propTypes = {
   formData: PropTypes.shape({
     name: PropTypes.string.isRequired,
     email: PropTypes.string.isRequired,
@@ -48,4 +47,4 @@ SignUpForm.propTypes = {
   onInputChange: PropTypes.func.isRequired
 };
 
-export default SignUpForm;
+export default SiginUpForm;
