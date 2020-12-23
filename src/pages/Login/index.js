@@ -1,8 +1,9 @@
-import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { Grid } from 'semantic-ui-react';
-import { Link } from 'react-router-dom';
-import { LoginForm, CustomMessage, CustomHeader } from '../../components';
+import React, { Component } from "react";
+import { connect } from "react-redux";
+import { Link } from "react-router-dom";
+import { Grid } from "semantic-ui-react";
+import { LoginForm, CustomHeader, CustomMessage } from "../../components";
+import * as authAction from "../../store/ducks/auth/actions";
 
 class Login extends Component {
   state = {
@@ -11,27 +12,58 @@ class Login extends Component {
   };
 
   handleInputChange = ({ target: { name, value } }) => {
-    this.setState({ [name]: value});
+    this.setState({ [name]: value });
   };
 
-  render () {
-    console.log('props', this.props);
+  handleSubmit = () => {
+    const {
+      auth: { usersList },
+      signIn,
+      history
+    } = this.props;
+    const { email, password } = this.state;
+    const userAlreadyExists = usersList.some(
+      (user) => user.email === email && user.password === password
+    );
+
+    console.log("1");
+
+    if (userAlreadyExists) {
+      const user = { email, password };
+      signIn(user);
+      history.push("/home");
+    }
+  };
+
+  render() {
     return (
-      <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
+      <Grid
+        textAlign="center"
+        style={{ height: "100vh" }}
+        verticalAlign="middle"
+      >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <CustomHeader message="Log-in to your account" />
-          <LoginForm />
+          <CustomHeader message="Welcome the Chain" />
+          <LoginForm
+            formData={this.state}
+            onInputChange={this.handleInputChange}
+            onSubmit={this.handleSubmit}
+          />
           <CustomMessage>
-            New to us? <Link to='/signup'>Sign Up</Link>
+            New to us? <Link to="/signup">Sign Up</Link>
           </CustomMessage>
         </Grid.Column>
       </Grid>
     );
   }
-};
+}
 
 const mapStateToProps = (state) => ({
   auth: state.auth
 });
 
-export default connect(mapStateToProps)(Login);
+const mapDispatchToProps = {
+  signIn: authAction.signIn
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Login);

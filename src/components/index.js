@@ -3,4 +3,4 @@ import CustomMessage from './CustomMessage';
 import LoginForm from './LoginForm';
 import SignUpForm from './SignUpForm';
 
-export { CustomHeader, CustomMessage, LoginForm, SignUpForm };
+export { SignUpForm, CustomHeader, CustomMessage, LoginForm };
