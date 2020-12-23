@@ -16,6 +16,13 @@ class SignUp extends Component {
     this.setState({ [name]: value });
   };
 
+  onHandleSubmit = () => {
+    const { signUp, history } = this.props;
+    const user = this.state;
+    signUp(user);
+    history.push("/chain");
+  };
+
   render () {
     console.log(this.props);
     return (
