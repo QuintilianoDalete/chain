@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Grid } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { CustomMessage, CustomHeader, SignUpForm } from '../../components';
+import * as authAction from '../../store/ducks/auth/actions';
 
 class SignUp extends Component {
   state = {
@@ -14,8 +16,15 @@ class SignUp extends Component {
     this.setState({ [name]: value });
   };
 
+  handleSubmit = () => {
+    const { signUp, history } = this.props;
+    const user = this.state;
+    signUp(user);
+    history.push("/chain");
+  };
+
   render () {
-    console.log('props', this.props.history);
+    console.log(this.props);
     return (
       <Grid 
         textAlign='center'
@@ -32,6 +41,7 @@ class SignUp extends Component {
           <SignUpForm
             formData={this.sate}
             onInputchange={this.handleInputChange}
+            onHandleSubmit={this.handleSubmit}
           />
           <CustomMessage>
             Already have an acount? <Link to='/'>Sign In</Link>
@@ -41,5 +51,13 @@ class SignUp extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  auth: state.auth
+});
+
+const mapDispatchToProps = {
+  signUp: authAction.signUp
+};
   
-export default SignUp;
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
