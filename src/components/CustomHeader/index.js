@@ -1,10 +1,13 @@
-import React from 'react';
-import { Header, Image } from 'semantic-ui-react';
+import React from "react";
+import PropTypes from "prop-types";
+import { Header } from "semantic-ui-react";
 
-const CustomHeader = ({ message }) => (
-  <Header as='h2' color='teal' textAlign='center'>
-    <Image src='/images/logo.png' /> {message}
-  </Header>
+const CustomHeader = ({ message, ...props }) => (
+  <Header {...props}>{message}</Header>
 );
+
+CustomHeader.propTypes = {
+  message: PropTypes.string.isRequired
+};
 
 export default CustomHeader;
