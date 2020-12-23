@@ -35,7 +35,7 @@ class SignUp extends Component {
             as="h2"
             color="blue"
             textAlign="center"
-            message="TrybeTask"
+            message="Welcome the Chain"
           />
           <SignUpForm
             formData={this.state}
@@ -43,7 +43,7 @@ class SignUp extends Component {
             onHandleSubmit={this.handleSubmit}
           />
           <CustomMessage>
-            Already have an account? <Link to="/">Sign In</Link>
+            Already have an account? <Link to="/chain">Sign In</Link>
           </CustomMessage>
         </Grid.Column>
       </Grid>
