@@ -10,6 +10,4 @@ const App = () => (
   </Switch>
 );
 
-
 export default App;
-
