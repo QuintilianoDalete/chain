@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { connect } from 'react-redux';
 import { Grid } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { CustomMessage, CustomHeader, SignUpForm } from '../../components';
@@ -41,5 +42,9 @@ class SignUp extends Component {
     );
   }
 }
+
+const mapStateToProps = (state) => ({
+  auth: state.auth
+});
   
-export default SignUp;
+export default connect(mapStateToProps)(SignUp);
