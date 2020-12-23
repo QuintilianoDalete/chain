@@ -16,7 +16,7 @@ class SignUp extends Component {
     this.setState({ [name]: value });
   };
 
-  onHandleSubmit = () => {
+  handleSubmit = () => {
     const { signUp, history } = this.props;
     const user = this.state;
     signUp(user);
@@ -41,6 +41,7 @@ class SignUp extends Component {
           <SignUpForm
             formData={this.sate}
             onInputchange={this.handleInputChange}
+            onHandleSubmit={this.handleSubmit}
           />
           <CustomMessage>
             Already have an acount? <Link to='/'>Sign In</Link>
