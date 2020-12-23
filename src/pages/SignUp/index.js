@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { Grid } from 'semantic-ui-react'
 import { Link } from 'react-router-dom'
 import { CustomMessage, CustomHeader, SignUpForm } from '../../components';
+import * as authAction from '../../store/ducks/auth/actions';
 
 class SignUp extends Component {
   state = {
@@ -16,7 +17,7 @@ class SignUp extends Component {
   };
 
   render () {
-    console.log('props', this.props.history);
+    console.log(this.props);
     return (
       <Grid 
         textAlign='center'
@@ -46,5 +47,9 @@ class SignUp extends Component {
 const mapStateToProps = (state) => ({
   auth: state.auth
 });
+
+const mapDispatchToProps = {
+  signUp: authAction.signUp
+};
   
-export default connect(mapStateToProps)(SignUp);
+export default connect(mapStateToProps, mapDispatchToProps)(SignUp);
