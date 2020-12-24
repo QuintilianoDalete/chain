@@ -9,7 +9,6 @@ class Home extends Component {
     console.log("props", this.props)
     return(
       <>
-        <NavBar onLogOut={this.props.onLogOut} />
         <h1>Home</h1>
       </>
     );

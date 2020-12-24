@@ -7,8 +7,7 @@ class Tasks extends Component {
     console.log("props", this.props)
     return(
       <>
-        <NavBar onLogOut={this.props.onLogOut} />
-        <h1>tasks</h1>
+        <h1>Tasks</h1>
       </>
     );
   }
