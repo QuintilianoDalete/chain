@@ -20,7 +20,7 @@ class SignUp extends Component {
     const { signUp, history } = this.props;
     const user = this.state;
     signUp(user);
-    history.push("/");
+    history.push("/chain");
   };
 
   render() {
