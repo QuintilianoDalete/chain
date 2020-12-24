@@ -9,7 +9,11 @@ export default {
         password: '123456'
       }
     ],
-    currentUser: {},
+    currentUser: {
+      name: 'admin',
+      email: 'admin@gmail.com',
+      password: '123456'
+    },
     isLogged: true
   },
   tasks: [
