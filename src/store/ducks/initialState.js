@@ -1,7 +1,13 @@
 export default {
   auth: {
-    usersList: [],
+    usersList: [
+      {
+        name: 'admin',
+        email: 'admin@gmail.com',
+        password: '123456'
+      }
+    ],
     currentUser: {},
-    inLogged: false
+    inLogged: true
   }
 };
