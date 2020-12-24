@@ -43,7 +43,12 @@ class Login extends Component {
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <CustomHeader message="Welcome the Chain" />
+          <CustomHeader
+            as="h2"
+            color="blue"
+            textAlign="center"
+            message="Welcome the Chain"
+          />
           <LoginForm
             formData={this.state}
             onInputChange={this.handleInputChange}
