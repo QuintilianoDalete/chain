@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import { NavBar } from '../../components';
-
 
 class Tasks extends Component {
   render(){
