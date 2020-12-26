@@ -1,7 +1,8 @@
-import React from 'react';
-import Routes from './routes';
-import 'semantic-ui-css/semantic.min.css';
+import React from "react";
+import Routes from "./routes";
+import "semantic-ui-css/semantic.min.css";
+import "./styles.css";
 
-const App = () => (<Routes />);
-
-export default App;
+export default function App() {
+  return <Routes />;
+}
