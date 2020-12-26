@@ -1,20 +1,16 @@
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 export default {
   auth: {
     usersList: [
       {
-        name: 'admin',
-        email: 'admin@gmail.com',
-        password: '123456'
+        name: "admin",
+        email: "admin@gmail.com",
+        password: "admin123"
       }
     ],
-    currentUser: {
-      name: 'admin',
-      email: 'admin@gmail.com',
-      password: '123456'
-    },
-    isLogged: true
+    currentUser: {},
+    isLogged: false
   },
   tasks: [
     {
@@ -74,5 +70,4 @@ export default {
         "essa é a descrição de uma task de teste para usarmos como mock"
     }
   ]
-
 };
