@@ -1,8 +1,8 @@
 import React, { Component } from "react";
 import { connect } from "react-redux";
-import { Grid } from "semantic-ui-react";
 import { Link } from "react-router-dom";
-import { CustomMessage, CustomHeader, SignUpForm } from "../../components";
+import { Grid } from "semantic-ui-react";
+import { SignUpForm, CustomHeader, CustomMessage } from "../../components";
 import * as authAction from "../../store/ducks/auth/actions";
 
 class SignUp extends Component {
@@ -20,7 +20,7 @@ class SignUp extends Component {
     const { signUp, history } = this.props;
     const user = this.state;
     signUp(user);
-    history.push("/chain");
+    history.push("/");
   };
 
   render() {
@@ -31,19 +31,14 @@ class SignUp extends Component {
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <CustomHeader
-            as="h2"
-            color="blue"
-            textAlign="center"
-            message="Welcome the Chain"
-          />
+          <CustomHeader message="TrybeTasks" />
           <SignUpForm
             formData={this.state}
             onInputChange={this.handleInputChange}
-            onHandleSubmit={this.handleSubmit}
+            onSubmit={this.handleSubmit}
           />
           <CustomMessage>
-            Already have an account? <Link to="/chain">Sign In</Link>
+            Already have an ancount? <Link to="/">Sign In</Link>
           </CustomMessage>
         </Grid.Column>
       </Grid>
