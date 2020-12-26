@@ -1,19 +1,19 @@
-import React from 'react';
-import { Button, Form, Segment } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
+import React from "react";
+import { Button, Form, Segment } from "semantic-ui-react";
+import PropTypes from "prop-types";
 
 const TaskForm = ({
   formData: { title, subtitle, description },
   onInputChange,
   onSubmit
 }) => (
-  <Form size='large'>
+  <Form size="large">
     <Segment stacked>
       <Form.Input
         value={title}
-        name='title'
+        name="title"
         fluid
-        placeholder='title'
+        placeholder="title"
         onChange={(event) => onInputChange(event)}
       />
       <Form.Input
@@ -34,7 +34,7 @@ const TaskForm = ({
       </Button>
     </Segment>
   </Form>
-)
+);
 
 TaskForm.propTypes = {
   formData: PropTypes.shape({

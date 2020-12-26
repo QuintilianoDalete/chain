@@ -1,7 +1,7 @@
-import React from 'react';
-import { Card } from 'semantic-ui-react';
-import PropTypes from 'prop-types';
-import TaskCard from '../TaskCard';
+import React from "react";
+import { Card } from "semantic-ui-react";
+import PropTypes from "prop-types";
+import TaskCard from "../TaskCard";
 
 const TaskGroup = ({ tasks }) => (
   <Card.Group>
