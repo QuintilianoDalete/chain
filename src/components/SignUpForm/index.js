@@ -5,7 +5,7 @@ import PropTypes from "prop-types";
 const SiginUpForm = ({
   formData: { name, password, email },
   onInputChange,
-  onHandleSubmit
+  onSubmit
 }) => (
   <Form size="large">
     <Segment stacked>
@@ -31,7 +31,7 @@ const SiginUpForm = ({
         type="password"
         onChange={(event) => onInputChange(event)}
       />
-      <Button onClick={onHandleSubmit} color="blue" fluid size="large">
+      <Button onClick={onSubmit} color="blue" fluid size="large">
         SignUp
       </Button>
     </Segment>
@@ -44,7 +44,8 @@ SiginUpForm.propTypes = {
     email: PropTypes.string.isRequired,
     password: PropTypes.string.isRequired
   }).isRequired,
-  onInputChange: PropTypes.func.isRequired
+  onInputChange: PropTypes.func.isRequired,
+  onSubmit: PropTypes.func.isRequired
 };
 
 export default SiginUpForm;
