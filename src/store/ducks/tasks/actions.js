@@ -10,7 +10,7 @@ export const editTasks = (id) => ({
   payload: id
 });
 
-export const deletetasks = (id) => ({
+export const deleteTask = (id) => ({
   type: TasksTypes.DELETE,
   payload: id
 });

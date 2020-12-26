@@ -5,12 +5,12 @@ import { TaskGroup } from '../../components';
 
 class Home extends Component {
   render(){
-    const { tasks } = this.props;
+    const { tasks, auth: { currentUser: { name } } } = this.props;
     return(
       <Container fluid textAlign='justified' style={{ width: 1000}}>
         <Header style={{ marginTop: 40 }} textAlign='center' as='h2'>
           <Icon name='tasks' />
-          <Header.Content>{`Current user Tasks`}</Header.Content>
+          <Header.Content>{`${name}'s user Tasks`}</Header.Content>
         </Header>
         <TaskGroup tasks={tasks} />
       </Container>
