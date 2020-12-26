@@ -5,5 +5,15 @@ import NavBar from './NavBar';
 import SignUpForm from './SignUpForm';
 import TaskGroup from './TaskGroup';
 import TaskCard from './TaskCard';
+import TaskForm from './TaskForm';
 
-export { TaskCard, TaskGroup, SignUpForm, CustomHeader, CustomMessage, NavBar, LoginForm };
+export { 
+  TaskCard,
+  TaskGroup,
+  SignUpForm,
+  CustomHeader,
+  CustomMessage,
+  NavBar,
+  LoginForm,
+  TaskForm
+};
