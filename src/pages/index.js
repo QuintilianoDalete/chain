@@ -1,6 +1,4 @@
-import Home from './Home';
-import Login from './Login';
-import SignUp from './SignUp';
-import Tasks from './Tasks';
-
-export { Tasks, Home, Login, SignUp };
+export { default as Home } from "./Home";
+export { default as Login } from "./Login";
+export { default as SignUp } from "./SignUp";
+export { default as Tasks } from "./Tasks";
