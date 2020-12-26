@@ -20,7 +20,7 @@ class SignUp extends Component {
     const { signUp, history } = this.props;
     const user = this.state;
     signUp(user);
-    history.push("/");
+    history.push("/chain");
   };
 
   render() {
@@ -38,7 +38,7 @@ class SignUp extends Component {
             onSubmit={this.handleSubmit}
           />
           <CustomMessage>
-            Already have an ancount? <Link to="/">Sign In</Link>
+            Already have an ancount? <Link to="/chain">Sign In</Link>
           </CustomMessage>
         </Grid.Column>
       </Grid>

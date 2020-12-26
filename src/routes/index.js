@@ -6,7 +6,7 @@ import PrivateRoute from "./PrivateRoute";
 export default function Routes() {
   return (
     <Switch>
-      <Route exact path="/" component={Login} />
+      <Route exact path="/chain" component={Login} />
       <Route path="/signup" component={SignUp} />
       <PrivateRoute isPrivate path="/home" component={Home} />
       <PrivateRoute isPrivate path="/tasks" component={Tasks} />

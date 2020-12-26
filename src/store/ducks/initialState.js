@@ -10,7 +10,7 @@ export default {
       }
     ],
     currentUser: {},
-    isLogged: false
+    isLogged: true
   },
   tasks: [
     {
