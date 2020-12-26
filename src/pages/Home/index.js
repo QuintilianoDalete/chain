@@ -18,9 +18,9 @@ class Home extends Component {
   }
 }
 
-const mapStateToProps = (state) => ({
-  tasks: state.tasks,
-  auth: state.auth
+const mapStateToProps = (tasks, auth) => ({
+  tasks,
+  auth
 });
 
 export default connect(mapStateToProps)(Home);
