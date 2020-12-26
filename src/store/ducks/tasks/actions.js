@@ -1,4 +1,4 @@
-import { TasksTypes } from './types';
+import { TasksTypes } from "./types";
 
 export const addTask = (task) => ({
   type: TasksTypes.ADD,
