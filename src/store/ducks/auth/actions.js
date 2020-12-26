@@ -1,4 +1,4 @@
-import { AuthTypes } from './types';
+import { AuthTypes } from "./types";
 
 export const signIn = (user) => ({
   type: AuthTypes.SIGNIN,

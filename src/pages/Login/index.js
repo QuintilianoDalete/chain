@@ -22,11 +22,10 @@ class Login extends Component {
       history
     } = this.props;
     const { email, password } = this.state;
+
     const userAlreadyExists = usersList.some(
       (user) => user.email === email && user.password === password
     );
-
-    console.log("1");
 
     if (userAlreadyExists) {
       const user = { email, password };
@@ -43,12 +42,7 @@ class Login extends Component {
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
-          <CustomHeader
-            as="h2"
-            color="blue"
-            textAlign="center"
-            message="Welcome the Chain"
-          />
+          <CustomHeader message="TrybeTasks" />
           <LoginForm
             formData={this.state}
             onInputChange={this.handleInputChange}

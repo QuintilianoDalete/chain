@@ -1,5 +1,5 @@
-import { AuthTypes } from './types';
-import initialState from '../initialState';
+import { AuthTypes } from "./types";
+import initialState from "../initialState";
 
 const INITIAL_STATE = initialState.auth;
 

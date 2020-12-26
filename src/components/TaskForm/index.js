@@ -2,50 +2,48 @@ import React from "react";
 import { Button, Form, Segment } from "semantic-ui-react";
 import PropTypes from "prop-types";
 
-const SiginUpForm = ({
-  formData: { name, password, email },
+const TaskForm = ({
+  formData: { title, subtitle, description },
   onInputChange,
   onSubmit
 }) => (
   <Form size="large">
     <Segment stacked>
       <Form.Input
-        value={name}
-        name="name"
+        value={title}
+        name="title"
         fluid
-        placeholder="Name"
+        placeholder="title"
         onChange={(event) => onInputChange(event)}
       />
       <Form.Input
-        value={email}
-        name="email"
+        value={subtitle}
+        name="subtitle"
         fluid
-        placeholder="E-mail address"
+        placeholder="Subtitle"
         onChange={(event) => onInputChange(event)}
       />
-      <Form.Input
-        value={password}
-        name="password"
-        fluid
-        placeholder="Password"
-        type="password"
+      <Form.TextArea
+        value={description}
+        name="description"
+        placeholder="Description"
         onChange={(event) => onInputChange(event)}
       />
       <Button onClick={onSubmit} color="blue" fluid size="large">
-        SignUp
+        Add Task
       </Button>
     </Segment>
   </Form>
 );
 
-SiginUpForm.propTypes = {
+TaskForm.propTypes = {
   formData: PropTypes.shape({
-    name: PropTypes.string.isRequired,
-    email: PropTypes.string.isRequired,
-    password: PropTypes.string.isRequired
+    title: PropTypes.string.isRequired,
+    subtitle: PropTypes.string.isRequired,
+    description: PropTypes.string.isRequired
   }).isRequired,
   onInputChange: PropTypes.func.isRequired,
   onSubmit: PropTypes.func.isRequired
 };
 
-export default SiginUpForm;
+export default TaskForm;
