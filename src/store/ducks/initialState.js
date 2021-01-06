@@ -1,5 +1,6 @@
 import { v4 as uuidv4 } from "uuid";
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default {
   auth: {
     usersList: [
@@ -63,7 +64,7 @@ export default {
         "essa é a descrição de uma task de teste para usarmos como mock"
     },
     {
-      id: 8,
+      id: uuidv4(),
       title: "Testando um titilo",
       subtitle: "testando um subtitulo",
       description:

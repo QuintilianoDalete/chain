@@ -4,7 +4,11 @@ import { Button, Card, Image } from "semantic-ui-react";
 import PropTypes from "prop-types";
 import * as tasksAction from "../../store/ducks/tasks/actions";
 
-const TaskCard = ({ task: { title, subtitle, description }, ...props }) => (
+const TaskCard = ({
+  task: { id, title, subtitle, description },
+  deleteTask,
+  ...props
+}) => (
   <Card {...props}>
     <Card.Content>
       <Image
@@ -21,7 +25,7 @@ const TaskCard = ({ task: { title, subtitle, description }, ...props }) => (
         <Button basic color="green">
           Edit
         </Button>
-        <Button basic color="red">
+        <Button onClick={() => deleteTask(id)} basic color="red">
           Delete
         </Button>
       </div>
@@ -31,14 +35,16 @@ const TaskCard = ({ task: { title, subtitle, description }, ...props }) => (
 
 TaskCard.propTypes = {
   task: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  deleteTask: PropTypes.func
 };
 
 const mapDispatchToProps = {
-  delete: tasksAction.deleteTask
+  deleteTask: tasksAction.deleteTask
 };
 
 export default connect(null, mapDispatchToProps)(TaskCard);
