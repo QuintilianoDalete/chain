@@ -47,4 +47,5 @@ const mapDispatchToProps = {
   deleteTask: tasksAction.deleteTask
 };
 
+
 export default connect(null, mapDispatchToProps)(TaskCard);
