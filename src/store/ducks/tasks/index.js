@@ -8,7 +8,7 @@ const tasksReducer = (state = INITIAL_STATE, action) => {
     case TasksTypes.ADD:
       return [...state, action.payload];
     case TasksTypes.DELETE:
-      return state.filter(({ id }) => id !== action.payload);
+      return state.filter( ({ id }) => id !== action.payload);
     default:
       return state;
   }

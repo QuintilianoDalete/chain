@@ -2,9 +2,13 @@ import React from "react";
 import { connect } from "react-redux";
 import { Button, Card, Image } from "semantic-ui-react";
 import PropTypes from "prop-types";
-import * as tasksActions from "../../store/ducks/tasks/actions";
+import * as tasksAction from "../../store/ducks/tasks/actions";
 
-const TaskCard = ({ task: { title, subtitle, description }, deleteTask, ...props }) => (
+const TaskCard = ({
+  task: { id, title, subtitle, description },
+  deleteTask,
+  ...props
+}) => (
   <Card {...props}>
     <Card.Content>
       <Image
@@ -21,7 +25,7 @@ const TaskCard = ({ task: { title, subtitle, description }, deleteTask, ...props
         <Button basic color="green">
           Edit
         </Button>
-        <Button basic color="red">
+        <Button onClick={() => deleteTask(id)} basic color="red">
           Delete
         </Button>
       </div>
@@ -31,15 +35,16 @@ const TaskCard = ({ task: { title, subtitle, description }, deleteTask, ...props
 
 TaskCard.propTypes = {
   task: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
   }).isRequired,
-  deleteTask: PropTypes.func.isRequired
+  deleteTask: PropTypes.func
 };
 
 const mapDispatchToProps = {
-  delete: tasksActions.deleteTask
+  deleteTask: tasksAction.deleteTask
 };
 
 export default connect(null, mapDispatchToProps)(TaskCard);
