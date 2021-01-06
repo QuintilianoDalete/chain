@@ -2,9 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import { Button, Card, Image } from "semantic-ui-react";
 import PropTypes from "prop-types";
-import * as tasksAction from "../../store/ducks/tasks/actions";
+import * as tasksActions from "../../store/ducks/tasks/actions";
 
-const TaskCard = ({ task: { title, subtitle, description }, ...props }) => (
+const TaskCard = ({ task: { title, subtitle, description }, deleteTask, ...props }) => (
   <Card {...props}>
     <Card.Content>
       <Image
@@ -34,11 +34,12 @@ TaskCard.propTypes = {
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
-  }).isRequired
+  }).isRequired,
+  deleteTask: PropTypes.func.isRequired
 };
 
 const mapDispatchToProps = {
-  delete: tasksAction.deleteTask
+  delete: tasksActions.deleteTask
 };
 
 export default connect(null, mapDispatchToProps)(TaskCard);
