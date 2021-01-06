@@ -5,8 +5,8 @@ import PropTypes from "prop-types";
 import * as tasksAction from "../../store/ducks/tasks/actions";
 
 const TaskCard = ({
-  task: { title, subtitle, description },
-  handleDelete, // added func. handleDelete.
+  task: { id, title, subtitle, description },
+  deleteTask,
   ...props
 }) => (
   <Card {...props}>
@@ -25,11 +25,7 @@ const TaskCard = ({
         <Button basic color="green">
           Edit
         </Button>
-        <Button
-          basic
-          color="red"
-          onClick={handleDelete}
-        >
+        <Button onClick={() => deleteTask(id)} basic color="red">
           Delete
         </Button>
       </div>
@@ -39,15 +35,16 @@ const TaskCard = ({
 
 TaskCard.propTypes = {
   task: PropTypes.shape({
+    id: PropTypes.string.isRequired,
     title: PropTypes.string.isRequired,
     subtitle: PropTypes.string.isRequired,
     description: PropTypes.string.isRequired
   }).isRequired,
-  handleDelete: PropTypes.func.isRequired // added func. handleDelete.
+  deleteTask: PropTypes.func
 };
 
 const mapDispatchToProps = {
-  delete: tasksAction.deleteTask
+  deleteTask: tasksAction.deleteTask
 };
 
 export default connect(null, mapDispatchToProps)(TaskCard);
